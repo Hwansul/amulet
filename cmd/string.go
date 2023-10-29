@@ -1,4 +1,3 @@
-// Amulet component
 // Copyright © 2023 Mindulle <mindullestudio@gmail.com>
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,39 +22,60 @@ package cmd
 
 import (
 	"log"
-	"os/exec"
+	"os"
+	"strings"
 
+	listFancy "github.com/hwansul/amulet/lib/bubbletea/list-fancy"
+	constant "github.com/hwansul/amulet/lib/constant"
 	"github.com/spf13/cobra"
 )
 
-// componentCmd represents the component command.
-var componentCmd = &cobra.Command{
-	Use:   "component",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+// stringCmd represents the string command.
+var stringCmd = &cobra.Command{
+	Use:   "string",
+	Short: "Print list of snippets for string.",
+	Long: `Fuzzy find and print list of snippets for string.
+	
+supported languages:
+python
+javascript
+golang
+bash
+	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		command := exec.Command("xdg-open", "https://codesandbox.io")
-		if err := command.Run(); err != nil {
+		var titles []string
+		var descs []string
+
+		userHomeDir, err := os.UserHomeDir()
+		if err != nil {
 			log.Fatal(err)
 		}
+
+		stringDir := userHomeDir + "/snippet/string"
+		files, err := os.ReadDir(stringDir)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		for _, file := range files {
+			titles = append(titles, file.Name())
+			descs = append(descs, constant.GardenBaseurl+"/flower/snippet/string"+strings.Split(file.Name(), ".")[0])
+		}
+
+		listFancy.Init(titles, descs, stringDir)
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(componentCmd)
+	rootCmd.AddCommand(stringCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// componentCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// stringCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// componentCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// stringCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
