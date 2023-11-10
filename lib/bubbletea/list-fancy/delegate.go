@@ -1,7 +1,6 @@
 package listfancy
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -10,12 +9,18 @@ import (
 	tea "github.com/charmbracelet/bubbletea"
 )
 
-func printChosenItemContent(itemDir string, itemName string) {
+// exported to get content of chosen item.
+var ChosenContent string
+
+func printChosenItem(itemDir string, itemName string) tea.Cmd {
 	content, err := os.ReadFile(itemDir + "/" + itemName)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(string(content))
+
+	ChosenContent = string(content)
+
+	return tea.Quit
 }
 
 func newItemDelegate(keys *delegateKeyMap, itemDir string) list.DefaultDelegate {
@@ -34,8 +39,7 @@ func newItemDelegate(keys *delegateKeyMap, itemDir string) list.DefaultDelegate 
 		case tea.KeyMsg:
 			switch {
 			case key.Matches(msg, keys.choose):
-				printChosenItemContent(itemDir, title)
-				return m.NewStatusMessage(statusMessageStyle("You chose " + title))
+				return printChosenItem(itemDir, title)
 
 			case key.Matches(msg, keys.remove):
 				index := m.Index()
