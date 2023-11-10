@@ -21,6 +21,7 @@
 package cmd
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"strings"
@@ -63,6 +64,7 @@ bash
 		}
 
 		listFancy.Init(titles, descs, stringDir)
+		fmt.Println(listFancy.ChosenContent)
 	},
 }
 
