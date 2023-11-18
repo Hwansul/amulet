@@ -1,4 +1,3 @@
-// Amulet glow
 // Copyright © 2023 Mindulle <mindullestudio@gmail.com>
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,39 +18,49 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-package cmd
+package suite
 
 import (
 	"fmt"
 
+	"github.com/hwansul/amulet/cmd"
 	"github.com/spf13/cobra"
 )
 
-// glowCmd represents the glow command.
-var glowCmd = &cobra.Command{
-	Use:   "glow",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+// suiteCmd represents the suite command.
+var suiteCmd = &cobra.Command{
+	Use:   "suite",
+	Short: "Dev-suite commands",
+	Long: `Below are list of commands:
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	commandLine: snippets to develop command line program 'amulet suite commandLine'
+	file: snippets to treat file in program 'amulet suite file'
+	http: snippets to treat http request and responses 'amulet suite http'
+	path: snippets to treat path in program  'amulet suite path'
+	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("glow")
+		fmt.Println(`
+		Run 'help suite <command>' for more information on a specific command.
+		
+		you can use following sub commands:
+		- amulet suite path
+		- amulet suite http
+		- amulet suite file
+		- amulet suite commandLine
+		`)
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(glowCmd)
+	cmd.RootCmd.AddCommand(suiteCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// glowCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// suiteCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// glowCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// suiteCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

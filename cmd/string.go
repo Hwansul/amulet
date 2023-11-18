@@ -21,13 +21,7 @@
 package cmd
 
 import (
-	"fmt"
-	"log"
-	"os"
-	"strings"
-
-	listFancy "github.com/hwansul/amulet/lib/bubbletea/list-fancy"
-	constant "github.com/hwansul/amulet/lib/constant"
+	"github.com/hwansul/amulet/modules"
 	"github.com/spf13/cobra"
 )
 
@@ -44,32 +38,12 @@ golang
 bash
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		var titles []string
-		var descs []string
-
-		userHomeDir, err := os.UserHomeDir()
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		stringDir := userHomeDir + "/snippet/string"
-		files, err := os.ReadDir(stringDir)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		for _, file := range files {
-			titles = append(titles, file.Name())
-			descs = append(descs, constant.GardenBaseurl+"/flower/snippet/string"+strings.Split(file.Name(), ".")[0])
-		}
-
-		listFancy.Init(titles, descs, stringDir)
-		fmt.Println(listFancy.ChosenContent)
+		modules.PrintContent("/string")
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(stringCmd)
+	RootCmd.AddCommand(stringCmd)
 
 	// Here you will define your flags and configuration settings.
 

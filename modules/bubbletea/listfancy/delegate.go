@@ -10,15 +10,19 @@ import (
 )
 
 // exported to get content of chosen item.
-var ChosenContent string
+var Content string
 
-func printChosenItem(itemDir string, itemName string) tea.Cmd {
+// exported to get name of chosen item.
+var ItemName string
+
+func setItemInfo(itemDir string, itemName string) tea.Cmd {
 	content, err := os.ReadFile(itemDir + "/" + itemName)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	ChosenContent = string(content)
+	ItemName = itemName
+	Content = string(content)
 
 	return tea.Quit
 }
@@ -39,7 +43,7 @@ func newItemDelegate(keys *delegateKeyMap, itemDir string) list.DefaultDelegate 
 		case tea.KeyMsg:
 			switch {
 			case key.Matches(msg, keys.choose):
-				return printChosenItem(itemDir, title)
+				return setItemInfo(itemDir, title)
 
 			case key.Matches(msg, keys.remove):
 				index := m.Index()

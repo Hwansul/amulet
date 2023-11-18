@@ -1,4 +1,3 @@
-// Amulet
 // Copyright © 2023 Mindulle <mindullestudio@gmail.com>
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,46 +18,38 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-package cmd
+package syntax
 
 import (
-	"os"
-
+	"github.com/hwansul/amulet/modules"
 	"github.com/spf13/cobra"
 )
 
-// RootCmd represents the base command when called without any subcommands.
-var RootCmd = &cobra.Command{
-	Use:   "amulet",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
+// typeCmd represents the type command.
+var typeCmd = &cobra.Command{
+	Use:   "type",
+	Short: "A brief description of your command",
+	Long: `A longer description that spans multiple lines and likely contains examples
+and usage of using your command. For example:
 
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
-}
-
-// Execute adds all child commands to the root command and sets flags appropriately.
-// This is called by main.main(). It only needs to happen once to the rootCmd.
-func Execute() {
-	err := RootCmd.Execute()
-	if err != nil {
-		os.Exit(1)
-	}
+	Run: func(cmd *cobra.Command, args []string) {
+		modules.PrintContent("/syntax/type")
+	},
 }
 
 func init() {
+	syntaxCmd.AddCommand(typeCmd)
+
 	// Here you will define your flags and configuration settings.
-	// Cobra supports persistent flags, which, if defined here,
-	// will be global for your application.
 
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.amulet.yaml)")
+	// Cobra supports Persistent Flags which will work for this command
+	// and all subcommands, e.g.:
+	// typeCmd.PersistentFlags().String("foo", "", "A help for foo")
 
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
-	RootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// Cobra supports local flags which will only run when this command
+	// is called directly, e.g.:
+	// typeCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

@@ -21,7 +21,11 @@ THE SOFTWARE.
 */
 package main
 
-import "github.com/hwansul/amulet/cmd"
+import (
+	"github.com/hwansul/amulet/cmd"
+	_ "github.com/hwansul/amulet/cmd/suite"
+	_ "github.com/hwansul/amulet/cmd/syntax"
+)
 
 func main() {
 	cmd.Execute()
