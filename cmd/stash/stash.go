@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-package syntax
+package stash
 
 import (
 	"fmt"
@@ -27,42 +27,40 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// syntaxCmd represents the syntax command.
-var syntaxCmd = &cobra.Command{
-	Use:   "syntax",
-	Short: "[Subcommands]Snippets for programming syntax.",
+// stashCmd represents the stash command.
+var stashCmd = &cobra.Command{
+	Use:   "stash",
+	Short: "[Subcommands]To treat special things or concepts.",
 	Long: `Below are list of commands:
 	
-	errorHandling: snippets for error handling syntax 'amulet syntax errorHandling'
-	function: snippets for function syntax 'amulet syntax function'
-	iterable: snippets for iterables. For example, array in js, list in python, etc... 'amulet syntax iterable'
-	keyValue: snippets for key-value pairs syntax. For example, object in js, dictionary in python, etc...  'amulet syntax keyValue'
-	type: snippets for data type. For example, union in ts, type hint in python, etc...  'amulet syntax type'
-	`,
+	async: snippets for asynchronous communication syntax 'amulet stash async'
+	browser: snippets to treat browser behaviors 'amulet stash browser'
+	concurrency: snippets for concurrency control. For example, goroutine in golang, etc... 'amulet stash concurrency'
+	testing: snippets for testing. 'amulet stash testing'
+`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println(`
 		Run 'help suite <command>' for more information on a specific command.
 		
 		you can use following sub commands:
-		- amulet syntax errorHandling
-		- amulet syntax function
-		- amulet syntax iterable
-		- amulet syntax keyValue
-		- amulet syntax type
+		- amulet stash async
+		- amulet stash browser
+		- amulet stash concurrency
+		- amulet stash testing
 		`)
 	},
 }
 
 func init() {
-	cmd.RootCmd.AddCommand(syntaxCmd)
+	cmd.RootCmd.AddCommand(stashCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// syntaxCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// stashCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// syntaxCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// stashCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
