@@ -370,7 +370,7 @@ nfpms:
         # should be set as `$NFPM_DEFAULT_RPM_PASSPHRASE`
         #
         # Templates: allowed.
-        key_file: "{{ .Env.GPG_KEY_PATH }}"
+        # key_file: "{{ .Env.GPG_KEY_PATH }}"
 
     # Custom configuration applied only to the Deb packager.
     deb:
