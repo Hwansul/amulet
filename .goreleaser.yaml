@@ -53,9 +53,9 @@ nfpms:
 
     # Build IDs for the builds you want to create NFPM packages for.
     # Defaults empty, which means no filtering.
-    builds:
-      - foo
-      - bar
+    # builds:
+      # - foo
+      # - bar
 
     # Your app's vendor.
     vendor: Mindulle Studio Inc.
