@@ -379,12 +379,12 @@ nfpms:
         - statically-linked-binary
         - changelog-file-missing-in-native-package
 
-      # Custom deb special files.
-      scripts:
-        # Deb rules script.
-        rules: foo.sh
-        # Deb templates file, when using debconf.
-        templates: templates
+      # # Custom deb special files.
+      # scripts:
+      #   # Deb rules script.
+      #   rules: foo.sh
+      #   # Deb templates file, when using debconf.
+      #   templates: templates
 
       # Custom deb triggers
       triggers:
