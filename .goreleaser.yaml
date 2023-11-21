@@ -328,11 +328,11 @@ nfpms:
     # Custom configuration applied only to the RPM packager.
     rpm:
       # RPM specific scripts.
-      scripts:
-        # The pretrans script runs before all RPM package transactions / stages.
-        pretrans: ./scripts/pretrans.sh
-        # The posttrans script runs after all RPM package transactions / stages.
-        posttrans: ./scripts/posttrans.sh
+      # scripts:
+      #   # The pretrans script runs before all RPM package transactions / stages.
+      #   pretrans: ./scripts/pretrans.sh
+      #   # The posttrans script runs after all RPM package transactions / stages.
+      #   posttrans: ./scripts/posttrans.sh
 
       # The package summary.
       #
