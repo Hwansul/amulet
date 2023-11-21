@@ -286,11 +286,11 @@ nfpms:
     # Values are the paths to the scripts which will be executed.
     #
     # Templates: allowed (since v1.20)
-    scripts:
-      preinstall: "scripts/preinstall.sh"
-      postinstall: "scripts/postinstall.sh"
-      preremove: "scripts/preremove.sh"
-      postremove: "scripts/postremove.sh"
+    # scripts:
+    #   preinstall: "scripts/preinstall.sh"
+    #   postinstall: "scripts/postinstall.sh"
+    #   preremove: "scripts/preremove.sh"
+    #   postremove: "scripts/postremove.sh"
 
     # Templated scripts to execute during the installation of the package. (overridable)
     #
