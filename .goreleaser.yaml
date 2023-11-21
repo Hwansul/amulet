@@ -414,7 +414,7 @@ nfpms:
         # should be set as `$NFPM_DEFAULT_DEB_PASSPHRASE`
         #
         # Templates: allowed.
-        key_file: "{{ .Env.GPG_KEY_PATH }}"
+        # key_file: "{{ .Env.GPG_KEY_PATH }}"
 
         # The type describes the signers role, possible values are "origin",
         # "maint" and "archive".
@@ -441,7 +441,7 @@ nfpms:
         # should be set as `$NFPM_DEFAULT_APK_PASSPHRASE`
         #
         # Templates: allowed.
-        key_file: "{{ .Env.GPG_KEY_PATH }}"
+        # key_file: "{{ .Env.GPG_KEY_PATH }}"
 
         # The name of the signing key. When verifying a package, the signature
         # is matched to the public key store in /etc/apk/keys/<key_name>.rsa.pub.
