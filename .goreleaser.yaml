@@ -61,7 +61,7 @@ nfpms:
     vendor: Mindulle Studio Inc.
 
     # Your app's homepage.
-    homepage: https://mindulle.github.io/
+    homepage: "https://github.com/Hwansul/amulet"
 
     # Your app's maintainer (probably you).
     maintainer: Mindulle <[mindullestudio@gmail.com]>
@@ -326,7 +326,7 @@ nfpms:
         # ...
 
     # Custom configuration applied only to the RPM packager.
-    rpm:
+    # rpm:
       # RPM specific scripts.
       # scripts:
       #   # The pretrans script runs before all RPM package transactions / stages.
@@ -337,27 +337,27 @@ nfpms:
       # The package summary.
       #
       # Default: first line of the description
-      summary: Explicit Summary for Sample Package
+      # summary: Explicit Summary for Sample Package
 
       # The package group.
       # This option is deprecated by most distros but required by old distros
       # like CentOS 5 / EL 5 and earlier.
-      group: Unspecified
+      # group: Unspecified
 
       # The packager is used to identify the organization that actually packaged
       # the software, as opposed to the author of the software.
       # `maintainer` will be used as fallback if not specified.
       # This will expand any env var you set in the field, eg packager: ${PACKAGER}
-      packager: GoReleaser <[email protected]>
+      # packager: GoReleaser <[email protected]>
 
       # Compression algorithm (gzip (default), lzma or xz).
-      compression: lzma
+      # compression: lzma
 
       # Prefixes for relocatable packages.
       #
       # Since: v1.20.
-      prefixes:
-        - /usr/bin
+      # prefixes:
+        # - /usr/bin
 
       # The package is signed if a key_file is set
       # signature:
@@ -450,7 +450,7 @@ nfpms:
         # Templates: allowed. (since v1.15)
         # key_name: origin
 
-    # archlinux:
+    archlinux:
       # Archlinux-specific scripts
       # scripts:
         # The preupgrade script runs before pacman upgrades the package.
@@ -460,7 +460,7 @@ nfpms:
 
       # The pkgbase can be used to explicitly specify the name to be used to refer
       # to a group of packages. See: https://wiki.archlinux.org/title/PKGBUILD#pkgbase.
-      # pkgbase: foo
+      pkgbase: amulet
 
       # The packager refers to the organization packaging the software, not to be confused
       # with the maintainer, which is the person who maintains the software.
