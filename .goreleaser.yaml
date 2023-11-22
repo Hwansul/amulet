@@ -31,6 +31,7 @@ universal_binaries:
   # Defaults to false.
   - replace: true
 
+# https://goreleaser.com/customization/homebrew/?h=brew#homebrew-taps
 brews:
   - # Name template of the recipe
     # Default to project name
