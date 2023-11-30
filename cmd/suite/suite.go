@@ -30,7 +30,7 @@ import (
 // suiteCmd represents the suite command.
 var suiteCmd = &cobra.Command{
 	Use:   "suite",
-	Short: "[Subcommands]Dev-suite commands",
+	Short: "[Parent]Dev-suite commands",
 	Long: `Below are list of commands:
 
 	commandLine: snippets to develop command line program 'amulet suite commandLine'

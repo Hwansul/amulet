@@ -30,7 +30,7 @@ import (
 // syntaxCmd represents the syntax command.
 var syntaxCmd = &cobra.Command{
 	Use:   "syntax",
-	Short: "[Subcommands]Snippets for programming syntax.",
+	Short: "[Parent]Snippets for programming syntax.",
 	Long: `Below are list of commands:
 	
 	errorHandling: snippets for error handling syntax 'amulet syntax errorHandling'
@@ -48,6 +48,7 @@ var syntaxCmd = &cobra.Command{
 		- amulet syntax function
 		- amulet syntax iterable
 		- amulet syntax keyValue
+		- amulet syntax string
 		- amulet syntax type
 		`)
 	},

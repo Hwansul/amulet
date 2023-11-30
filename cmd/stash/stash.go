@@ -30,7 +30,7 @@ import (
 // stashCmd represents the stash command.
 var stashCmd = &cobra.Command{
 	Use:   "stash",
-	Short: "[Subcommands]To treat special things or concepts.",
+	Short: "[Parent]To treat special things or concepts.",
 	Long: `Below are list of commands:
 	
 	async: snippets for asynchronous communication syntax 'amulet stash async'

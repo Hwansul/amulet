@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-package cmd
+package syntax
 
 import (
 	"github.com/hwansul/amulet/utils"
@@ -43,7 +43,7 @@ bash
 }
 
 func init() {
-	RootCmd.AddCommand(stringCmd)
+	syntaxCmd.AddCommand(stringCmd)
 
 	// Here you will define your flags and configuration settings.
 
