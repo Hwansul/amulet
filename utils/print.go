@@ -1,4 +1,4 @@
-package modules
+package utils
 
 import (
 	"fmt"
@@ -7,13 +7,13 @@ import (
 	"strings"
 
 	"github.com/alecthomas/chroma/quick"
-	"github.com/hwansul/amulet/modules/bubbletea/listfancy"
-	"github.com/hwansul/amulet/modules/resources"
+	"github.com/hwansul/amulet/constants"
+	"github.com/hwansul/amulet/utils/bubbletea/listfancy"
 )
 
 // Print content of selected item with highlighted text.
 func PrintContent(destDir string) {
-	srcDir := resources.BaseDir + destDir
+	srcDir := constants.BaseDir + destDir
 	files, err := os.ReadDir(srcDir)
 	if err != nil {
 		log.Fatal(err)
@@ -24,7 +24,7 @@ func PrintContent(destDir string) {
 
 	for _, file := range files {
 		fileNamesForTitle = append(fileNamesForTitle, file.Name())
-		urlsForDescription = append(urlsForDescription, resources.GardenBaseurl+"/flower/snippet"+destDir+"/"+strings.Split(file.Name(), ".")[0])
+		urlsForDescription = append(urlsForDescription, constants.GardenBaseurl+"/flower/snippet"+destDir+"/"+strings.Split(file.Name(), ".")[0])
 		// fileNamesForTitle[i] = file.Name()
 		// urlsForDescription[i] = resources.GardenBaseurl + "/flower/snippet" + destDir + "/" + strings.Split(file.Name(), ".")[0]
 	}

@@ -21,7 +21,7 @@
 package cmd
 
 import (
-	"github.com/hwansul/amulet/modules"
+	"github.com/hwansul/amulet/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -38,7 +38,7 @@ golang
 bash
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		modules.PrintContent("/string")
+		utils.PrintContent("/string")
 	},
 }
 
