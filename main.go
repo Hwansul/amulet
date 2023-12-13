@@ -21,8 +21,17 @@ THE SOFTWARE.
 */
 package main
 
-import "github.com/hwansul/amulet/cmd"
+import (
+	"log"
+
+	"github.com/jipilmuk/amulet/cmd"
+	_ "github.com/jipilmuk/amulet/cmd/stash"
+	_ "github.com/jipilmuk/amulet/cmd/suite"
+	_ "github.com/jipilmuk/amulet/cmd/syntax"
+)
 
 func main() {
-	cmd.Execute()
+	if err := cmd.RootCmd.Execute(); err != nil {
+		log.Fatal(err)
+	}
 }

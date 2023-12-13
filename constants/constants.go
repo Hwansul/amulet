@@ -7,7 +7,7 @@ var userHomeDir, _ = os.UserHomeDir()
 var BaseDir = userHomeDir + "/amulet"
 
 // github username and repo in order to fetch snippets.
-var Owner = "hwansul"
+var Owner = "jipilmuk"
 var Repository = "snippet"
 
 // urls for hosted websites.

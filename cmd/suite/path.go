@@ -21,7 +21,7 @@
 package suite
 
 import (
-	utils "github.com/hwansul/amulet/utils"
+	utils "github.com/jipilmuk/amulet/utils"
 	"github.com/spf13/cobra"
 )
 

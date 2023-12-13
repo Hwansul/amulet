@@ -1,14 +1,13 @@
 package utils
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"strings"
 
 	"github.com/alecthomas/chroma/quick"
-	"github.com/hwansul/amulet/constants"
-	"github.com/hwansul/amulet/utils/bubbletea/listfancy"
+	"github.com/jipilmuk/amulet/constants"
+	"github.com/jipilmuk/amulet/utils/bubbletea/listfancy"
 )
 
 // Print content of selected item with highlighted text.
@@ -34,6 +33,4 @@ func PrintContent(destDir string) {
 	if err := quick.Highlight(os.Stdout, highlihgted, listfancy.ItemName, "terminal", "monokai"); err != nil {
 		log.Fatal(err)
 	}
-
-	fmt.Println(highlihgted)
 }

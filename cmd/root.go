@@ -26,7 +26,7 @@ import (
 	"os"
 
 	"github.com/go-git/go-git/v5"
-	"github.com/hwansul/amulet/constants"
+	"github.com/jipilmuk/amulet/constants"
 	"github.com/spf13/cobra"
 )
 

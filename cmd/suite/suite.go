@@ -23,7 +23,7 @@ package suite
 import (
 	"fmt"
 
-	"github.com/hwansul/amulet/cmd"
+	"github.com/jipilmuk/amulet/cmd"
 	"github.com/spf13/cobra"
 )
 

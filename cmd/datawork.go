@@ -21,7 +21,7 @@
 package cmd
 
 import (
-	"github.com/hwansul/amulet/utils"
+	"github.com/jipilmuk/amulet/utils"
 	"github.com/spf13/cobra"
 )
 
