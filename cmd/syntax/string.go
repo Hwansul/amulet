@@ -21,7 +21,7 @@
 package syntax
 
 import (
-	"github.com/jipilmuk/amulet/utils"
+	"github.com/jipilmuk/amulet/utills"
 	"github.com/spf13/cobra"
 )
 
@@ -38,7 +38,7 @@ golang
 bash
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		utils.PrintContent("/string")
+		utills.PrintContent("/string")
 	},
 }
 

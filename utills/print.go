@@ -1,4 +1,4 @@
-package utils
+package utills
 
 import (
 	"log"
@@ -7,7 +7,7 @@ import (
 
 	"github.com/alecthomas/chroma/quick"
 	"github.com/jipilmuk/amulet/constants"
-	"github.com/jipilmuk/amulet/utils/bubbletea/listfancy"
+	"github.com/jipilmuk/amulet/utills/bubbletea/listfancy"
 )
 
 // Print content of selected item with highlighted text.

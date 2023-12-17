@@ -21,7 +21,7 @@
 package syntax
 
 import (
-	"github.com/jipilmuk/amulet/utils"
+	"github.com/jipilmuk/amulet/utills"
 	"github.com/spf13/cobra"
 )
 
@@ -36,7 +36,7 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		utils.PrintContent("/syntax/errorHandling")
+		utills.PrintContent("/syntax/errorHandling")
 	},
 }
 
