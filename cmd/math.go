@@ -28,7 +28,7 @@ import (
 // mathCmd represents the math command.
 var mathCmd = &cobra.Command{
 	Use:   "math",
-	Short: "A brief description of your command",
+	Short: "[root] snippets for mathmatical calculations.",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 

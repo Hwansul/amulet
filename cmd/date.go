@@ -28,7 +28,7 @@ import (
 // dateCmd represents the date command.
 var dateCmd = &cobra.Command{
 	Use:   "date",
-	Short: "A brief description of your command",
+	Short: "[root] to manage date and times",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 

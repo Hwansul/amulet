@@ -8,7 +8,7 @@ import (
 // dataprocessCmd represents the dataprocess command.
 var dataprocessCmd = &cobra.Command{
 	Use:   "dataprocess",
-	Short: "A brief description of your command",
+	Short: "[root] snippets for dataprocess",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 
