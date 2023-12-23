@@ -12,7 +12,7 @@ const commitTemplate = readFileAsync(path.join(TEMPLATE_DIR, 'commit-template.hb
 
 module.exports = {
   preset: 'angular',
-  repositoryUrl: 'https://github.com/jipilmuk/amulet.git',
+  repositoryUrl: 'https://github.com/hoehwa/meok.git',
   branches: ["main"],
   plugins: [
     [

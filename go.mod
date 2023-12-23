@@ -1,4 +1,4 @@
-module github.com/jipilmuk/amulet
+module github.com/hoehwa/meok
 
 go 1.21.5
 

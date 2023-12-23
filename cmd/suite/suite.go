@@ -23,7 +23,7 @@ package suite
 import (
 	"fmt"
 
-	"github.com/jipilmuk/amulet/cmd"
+	"github.com/hoehwa/meok/cmd"
 	"github.com/spf13/cobra"
 )
 
@@ -33,20 +33,20 @@ var suiteCmd = &cobra.Command{
 	Short: "[Parent]Dev-suite commands",
 	Long: `Below are list of commands:
 
-	commandLine: snippets to develop command line program 'amulet suite commandLine'
-	file: snippets to treat file in program 'amulet suite file'
-	http: snippets to treat http request and responses 'amulet suite http'
-	path: snippets to treat path in program  'amulet suite path'
+	commandLine: snippets to develop command line program 'meok suite commandLine'
+	file: snippets to treat file in program 'meok suite file'
+	http: snippets to treat http request and responses 'meok suite http'
+	path: snippets to treat path in program  'meok suite path'
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println(`
 		Run 'help suite <command>' for more information on a specific command.
 		
 		you can use following sub commands:
-		- amulet suite path
-		- amulet suite http
-		- amulet suite file
-		- amulet suite commandLine
+		- meok suite path
+		- meok suite http
+		- meok suite file
+		- meok suite commandLine
 		`)
 	},
 }

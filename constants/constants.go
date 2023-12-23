@@ -4,10 +4,10 @@ import "os"
 
 // Base directory of snippet.
 var userHomeDir, _ = os.UserHomeDir()
-var BaseDir = userHomeDir + "/amulet"
+var BaseDir = userHomeDir + "/meok"
 
 // github username and repo in order to fetch snippets.
-var Owner = "jipilmuk"
+var Owner = "hoehwa"
 var Repository = "snippet"
 
 // urls for hosted websites.

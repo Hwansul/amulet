@@ -13,7 +13,7 @@
 5. cobra-cli [설치](#cobra-설치하기) 후 root 명령어를 [초기화](#cobra-cli-어플리케이션-초기화하기) 해 주세요.
 6. `.goreleaser.yaml` 파일의 brews 키의 값들을 알맞게 수정 해 주세요.
    1. 여기서 자신의 homebrew tap이 존재하지 않으면 하나 만드실 수 있어요.
-   2. 깃허브 저장소에 `homebrew-username` [형식](https://docs.brew.sh/Taps#repository-naming-conventions-and-assumptions)으로 저장소를 만들고 [예시](https://github.com/jipilmuk/homebrew-chakra)처럼 설정 해 주세요.
+   2. 깃허브 저장소에 `homebrew-username` [형식](https://docs.brew.sh/Taps#repository-naming-conventions-and-assumptions)으로 저장소를 만들고 [예시](https://github.com/hoehwa/homebrew-chakra)처럼 설정 해 주세요.
    3. 해당 예시의 README.md 파일을 제외한 모든 파일은 이 저장소의 goreleaser가 자동으로 생성했어요.
 7. `.releaserc.js`의 `repositoryUrl` 키의 값을 생성한 저장소의 git 주소로 변경 해 주세요.
 8. 이 모든 과정에서 설정이 부족하거나 수정이 필요하다고 생각되시면 자유롭게 수정 해 주세요!
@@ -126,5 +126,5 @@ go get -u -v "github.com/user/module"
 - `git push --tags` 명령으로 로컬에서 생성한 tag를 저장소에 push 할 수 있습니다.
 - 자동으로 생성된 tag와 달리 로컬에서 개발자가 생성한 tag에는 `.github/workflows/goreleaser.yaml`파일에 설정 된 Github Action이 동작해요.
 - 그 결과, 자동으로 goReleaser가 여태까지 작성한 CLI 프로그램을 나의 Homebrew tap에 배포해 준답니다!
-- 그 이후에는 tap이 [예시 저장소](https://github.com/jipilmuk/homebrew-chakra)와 같은 상태가 되며 brew가 설치된 머신에서라면 만든 명령어를 바로 사용 할 수 있게 된답니다.
+- 그 이후에는 tap이 [예시 저장소](https://github.com/hoehwa/homebrew-chakra)와 같은 상태가 되며 brew가 설치된 머신에서라면 만든 명령어를 바로 사용 할 수 있게 된답니다.
 - [미리보기](#미리보기)의 6번 과정을 다시한번 잘 확인하셔서 템플릿 저장소에 대응되는 tap이 아닌 자신의 tap에 formulae가 잘 배포되게끔 다시한번 확인 해 주세요.

@@ -24,10 +24,10 @@ package main
 import (
 	"log"
 
-	"github.com/jipilmuk/amulet/cmd"
-	_ "github.com/jipilmuk/amulet/cmd/stash"
-	_ "github.com/jipilmuk/amulet/cmd/suite"
-	_ "github.com/jipilmuk/amulet/cmd/syntax"
+	"github.com/hoehwa/meok/cmd"
+	_ "github.com/hoehwa/meok/cmd/stash"
+	_ "github.com/hoehwa/meok/cmd/suite"
+	_ "github.com/hoehwa/meok/cmd/syntax"
 )
 
 func main() {

@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/alecthomas/chroma/quick"
-	"github.com/jipilmuk/amulet/constants"
-	"github.com/jipilmuk/amulet/utills/bubbletea/listfancy"
+	"github.com/hoehwa/meok/constants"
+	"github.com/hoehwa/meok/utills/bubbletea/listfancy"
 )
 
 // Print content of selected item with highlighted text.

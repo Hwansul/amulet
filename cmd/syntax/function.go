@@ -21,7 +21,7 @@
 package syntax
 
 import (
-	"github.com/jipilmuk/amulet/utills"
+	"github.com/hoehwa/meok/utills"
 	"github.com/spf13/cobra"
 )
 

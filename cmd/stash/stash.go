@@ -23,7 +23,7 @@ package stash
 import (
 	"fmt"
 
-	"github.com/jipilmuk/amulet/cmd"
+	"github.com/hoehwa/meok/cmd"
 	"github.com/spf13/cobra"
 )
 
@@ -33,20 +33,20 @@ var stashCmd = &cobra.Command{
 	Short: "[Parent]To treat special things or concepts.",
 	Long: `Below are list of commands:
 	
-	async: snippets for asynchronous communication syntax 'amulet stash async'
-	browser: snippets to treat browser behaviors 'amulet stash browser'
-	concurrency: snippets for concurrency control. For example, goroutine in golang, etc... 'amulet stash concurrency'
-	testing: snippets for testing. 'amulet stash testing'
+	async: snippets for asynchronous communication syntax 'meok stash async'
+	browser: snippets to treat browser behaviors 'meok stash browser'
+	concurrency: snippets for concurrency control. For example, goroutine in golang, etc... 'meok stash concurrency'
+	testing: snippets for testing. 'meok stash testing'
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println(`
 		Run 'help suite <command>' for more information on a specific command.
 		
 		you can use following sub commands:
-		- amulet stash async
-		- amulet stash browser
-		- amulet stash concurrency
-		- amulet stash testing
+		- meok stash async
+		- meok stash browser
+		- meok stash concurrency
+		- meok stash testing
 		`)
 	},
 }

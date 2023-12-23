@@ -35,18 +35,18 @@ universal_binaries:
 brews:
   - # Name template of the recipe
     # Default to project name
-    name: amulet
+    name: meok
 
     # Your app's homepage.
     # Default is empty.
-    homepage: "https://github.com/jipilmuk/amulet"
+    homepage: "https://github.com/hoehwa/meok"
 
     # GitHub/GitLab repository to push the formula to
     repository:
       # Repository owner template. (templateable)
-      owner: jipilmuk
+      owner: hoehwa
       # Repository name. (templateable)
-      name: homebrew-byeoru
+      name: homebrew-mungu
 
     # Git author used to commit to the repository.
     # Defaults are shown.
