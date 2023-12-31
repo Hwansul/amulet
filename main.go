@@ -28,6 +28,9 @@ import (
 	_ "github.com/hoehwa/meok/cmd/stash"
 	_ "github.com/hoehwa/meok/cmd/suite"
 	_ "github.com/hoehwa/meok/cmd/syntax"
+	_ "github.com/hoehwa/meok/cmd/testing"
+	_ "github.com/hoehwa/meok/cmd/testing/golang"
+	_ "github.com/hoehwa/meok/cmd/testing/js"
 )
 
 func main() {
