@@ -38,7 +38,7 @@ golang
 bash
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		utills.PrintContent("/string")
+		utills.PrettyPrint("/string")
 	},
 }
 
