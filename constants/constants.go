@@ -11,4 +11,4 @@ var Owner = "hoehwa"
 var Repository = "snippet"
 
 // urls for hosted websites.
-const Baseurl = "https://github.com/hoehwa/snippet"
+const Baseurl = "https://github.com/hoehwa/snippet/tree/main"
