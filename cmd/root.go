@@ -22,42 +22,31 @@ THE SOFTWARE.
 package cmd
 
 import (
-	"fmt"
 	"os"
 
-	"github.com/go-git/go-git/v5"
 	"github.com/hoehwa/meok/constants"
+	"github.com/hoehwa/meok/utills"
 	"github.com/spf13/cobra"
 )
 
 // RootCmd represents the base command when called without any subcommands.
 var RootCmd = &cobra.Command{
 	Use:   "meok",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
+	Short: "A command line utility for my snippets.",
+	Long: `
+	there are lists of available commands:
+	meok basic
+	meok advanced
+	meok utills
+	meok tricks
+	`,
 	Run: func(cmd *cobra.Command, args []string) {
-
+		// inital set up the contents to show.
 		if _, err := os.ReadDir(constants.BaseDir); err != nil {
-			// Clone the given repository to the given directory
-			targetURL := fmt.Sprintf("https://github.com/%s/%s", constants.Owner, constants.Repository)
-
-			info(fmt.Sprintf("git clone %s", targetURL))
-
-			_, err := git.PlainClone(constants.BaseDir, false, &git.CloneOptions{
-				URL:      targetURL,
-				Progress: os.Stdout,
-			})
-			checkIfError(err)
+			utills.Setup(constants.Owner, constants.Repository)
 		}
 
-		fmt.Println("To see how this commands colud be used, run this command again with --help option.")
+		cmd.Help()
 	},
 }
 
@@ -80,18 +69,4 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	RootCmd.Flags().BoolP("init", "", false, "Install resources to your home directory. ")
-}
-
-func checkIfError(err error) {
-	if err == nil {
-		return
-	}
-
-	fmt.Printf("\x1b[31;1m%s\x1b[0m\n", fmt.Sprintf("error: %s", err))
-	os.Exit(1)
-}
-
-// info should be used to describe the example commands that are about to run.
-func info(format string, args ...interface{}) {
-	fmt.Printf("\x1b[34;1m%s\x1b[0m\n", fmt.Sprintf(format, args...))
 }
