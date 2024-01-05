@@ -53,7 +53,8 @@ func PrettyPrint(subPath string) {
 	titles, descs := getTitlesAndDescs(srcPath, subPath)
 	var selection *string
 
-	// init custom callout instance. see godoc documents for more informations.
+	// Class to generate titles and descriptions into the bubble-tea client.
+	// It also save user a selection and pass it to another process to show contents for a selected file.
 	callout := listfancy.NewCallout(listfancy.Callout{
 		Titles:    titles,
 		Descs:     descs,
