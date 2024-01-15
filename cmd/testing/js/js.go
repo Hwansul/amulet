@@ -4,7 +4,7 @@ Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 package js
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/hoehwa/meok/cmd/testing"
 	"github.com/spf13/cobra"
@@ -24,17 +24,10 @@ var jsCmd = &cobra.Command{
 	tips: tips from 30-seconds-of-code. this is the only command come from other resources. 'meok testing js tips'
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(`
-		Run 'help suite <command>' for more information on a specific command.
-		
-		you can use following sub commands:
-		- meok testing js anatomy
-		- meok testing js backend
-		- meok testing js CI
-		- meok testing js coverage
-		- meok testing js frontend
-		- meok testing js tips
-		`)
+		err := cmd.Help()
+		if err != nil {
+			log.Fatal(err)
+		}
 	},
 }
 

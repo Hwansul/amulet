@@ -1,4 +1,4 @@
-package utills
+package internal
 
 import (
 	"log"
@@ -6,8 +6,7 @@ import (
 	"strings"
 
 	"github.com/alecthomas/chroma/quick"
-	"github.com/hoehwa/gopkg/charm/bubbletea/listfancy"
-	"github.com/hoehwa/meok/constants"
+	"github.com/hoehwa/gopkg/bubbletea/listfancy"
 )
 
 // Read and return contents of the file at the specific absoulte path.
@@ -22,7 +21,7 @@ func readFileAt(fileAbsPath string) string {
 
 // Return a pretty-printed filename as an URL format.
 func fmtFileNameAsURL(subPath string, fname string) string {
-	basename := constants.Baseurl + subPath + "/"
+	basename := Baseurl + subPath + "/"
 	location := strings.TrimRight(fname, ".")
 
 	return basename + location
@@ -48,7 +47,7 @@ func getTitlesAndDescs(srcPath string, subPath string) ([]string, []string) {
 
 // Print content of selected item with highlighted text.
 func PrettyPrint(subPath string) {
-	srcPath := constants.BaseDir + subPath
+	srcPath := BaseDir + subPath
 
 	titles, descs := getTitlesAndDescs(srcPath, subPath)
 	var selection *string
@@ -61,7 +60,7 @@ func PrettyPrint(subPath string) {
 		Selection: selection,
 	})
 
-	listfancy.Run(*callout)
+	listfancy.InitCallout(*callout)
 
 	selectedFile := *callout.Selection
 	contents := readFileAt(srcPath + "/" + selectedFile)

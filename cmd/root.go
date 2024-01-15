@@ -22,10 +22,11 @@ THE SOFTWARE.
 package cmd
 
 import (
+	"log"
 	"os"
 
-	"github.com/hoehwa/meok/constants"
-	"github.com/hoehwa/meok/utills"
+	"github.com/hoehwa/gopkg/git"
+	"github.com/hoehwa/meok/internal"
 	"github.com/spf13/cobra"
 )
 
@@ -42,11 +43,12 @@ var RootCmd = &cobra.Command{
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// inital set up the contents to show.
-		if _, err := os.ReadDir(constants.BaseDir); err != nil {
-			utills.Setup(constants.Owner, constants.Repository)
-		}
+		git.CloneRepoInto(internal.Owner, internal.Repository, internal.BaseDir)
 
-		cmd.Help()
+		err := cmd.Help()
+		if err != nil {
+			log.Fatal(err)
+		}
 	},
 }
 

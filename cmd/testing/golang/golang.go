@@ -4,7 +4,7 @@ Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 package golang
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/hoehwa/meok/cmd/testing"
 	"github.com/spf13/cobra"
@@ -23,16 +23,10 @@ var golangCmd = &cobra.Command{
 	withoutMocks: documents and snippets which explain why needs to do testing without. 'meok testing golang withoutMocks'
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(`
-		Run 'help suite <command>' for more information on a specific command.
-		
-		you can use following sub commands:
-		- meok testing golang acptnTest
-		- meok testing golang antiPtrns
-		- meok testing golang scaleAcptn
-		- meok testing golang tips
-		- meok testing golang withoutMocks
-		`)
+		err := cmd.Help()
+		if err != nil {
+			log.Fatal(err)
+		}
 	},
 }
 

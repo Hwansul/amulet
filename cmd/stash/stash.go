@@ -21,7 +21,7 @@
 package stash
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/hoehwa/meok/cmd"
 	"github.com/spf13/cobra"
@@ -39,15 +39,10 @@ var stashCmd = &cobra.Command{
 	testing: snippets for testing. 'meok stash testing'
 `,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(`
-		Run 'help suite <command>' for more information on a specific command.
-		
-		you can use following sub commands:
-		- meok stash async
-		- meok stash browser
-		- meok stash concurrency
-		- meok stash testing
-		`)
+		err := cmd.Help()
+		if err != nil {
+			log.Fatal(err)
+		}
 	},
 }
 

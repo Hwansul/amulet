@@ -4,7 +4,7 @@ Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 package testing
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/hoehwa/meok/cmd"
 	"github.com/spf13/cobra"
@@ -20,13 +20,10 @@ var TestingCmd = &cobra.Command{
 	js: parent command to see subcommands for javascript testing 'meok testing js'
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(`
-		Run 'help suite <command>' for more information on a specific command.
-		
-		you can use following sub commands:
-		- meok testing golang
-		- meok testing js
-		`)
+		err := cmd.Help()
+		if err != nil {
+			log.Fatal(err)
+		}
 	},
 }
 

@@ -21,7 +21,7 @@
 package suite
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/hoehwa/meok/cmd"
 	"github.com/spf13/cobra"
@@ -39,15 +39,10 @@ var suiteCmd = &cobra.Command{
 	path: snippets to treat path in program  'meok suite path'
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(`
-		Run 'help suite <command>' for more information on a specific command.
-		
-		you can use following sub commands:
-		- meok suite path
-		- meok suite http
-		- meok suite file
-		- meok suite commandLine
-		`)
+		err := cmd.Help()
+		if err != nil {
+			log.Fatal(err)
+		}
 	},
 }
 

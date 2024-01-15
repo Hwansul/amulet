@@ -21,7 +21,7 @@
 package syntax
 
 import (
-	"github.com/hoehwa/meok/utills"
+	"github.com/hoehwa/meok/internal"
 	"github.com/spf13/cobra"
 )
 
@@ -38,7 +38,7 @@ golang
 bash
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		utills.PrettyPrint("/syntax/string")
+		internal.PrettyPrint("/syntax/string")
 	},
 }
 

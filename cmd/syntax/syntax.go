@@ -21,7 +21,7 @@
 package syntax
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/hoehwa/meok/cmd"
 	"github.com/spf13/cobra"
@@ -40,17 +40,10 @@ var syntaxCmd = &cobra.Command{
 	type: snippets for data type. For example, union in ts, type hint in python, etc...  'meok syntax type'
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(`
-		Run 'help suite <command>' for more information on a specific command.
-		
-		you can use following sub commands:
-		- meok syntax errorHandling
-		- meok syntax function
-		- meok syntax iterable
-		- meok syntax keyValue
-		- meok syntax string
-		- meok syntax type
-		`)
+		err := cmd.Help()
+		if err != nil {
+			log.Fatal(err)
+		}
 	},
 }
 
