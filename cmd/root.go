@@ -43,7 +43,9 @@ var RootCmd = &cobra.Command{
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// inital set up the contents to show.
-		git.CloneRepoInto(internal.Owner, internal.Repository, internal.BaseDir)
+		if initFlag, _ := cmd.Flags().GetBool("init"); initFlag {
+			git.CloneRepoInto(internal.Owner, internal.Repository, internal.BaseDir)
+		}
 
 		err := cmd.Help()
 		if err != nil {
@@ -70,5 +72,5 @@ func init() {
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
-	RootCmd.Flags().BoolP("init", "", false, "Install resources to your home directory. ")
+	RootCmd.Flags().Bool("init", false, "Install resources to your home directory. ")
 }
